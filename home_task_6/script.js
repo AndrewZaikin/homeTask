@@ -1,27 +1,35 @@
 
 // let array = [1, 2, 3, 4, 5, 6, 7]; // С const не работает
 // array = array.filter(
-//    function deleteItems(array, item) {
+//    function deleteItems(array) {
 //       return array != 5
 //    }
-// );
-// console.log(array);
+// ); console
+//    .log(array);
 
 //__________________________________________________________
 
-let array = ['Dog', 4, 'Cat', 6];
+let arr = ['Dog', 4, 'Cat', 6, 8];
+// let arr = [4, 6, 4, 6, 4, 6];
 
-function average(arr) {
-   if +(arr.length === 0)
-      return 0;
-
+const getAverage = (numbers) => {
    let sum = 0;
-
-   for (let i = 0; i < arr.length; i++) {
-      sum += arr[i];
+   for (let i = 0; i < numbers.length; i++) {
+      if (isNaN(numbers[i]) === true) { continue }
+      else { sum += Number(numbers[i]) }
    }
-   return sum / arr.length;
-}
+   return sum / numbers.length;
+};
 
+console.log(getAverage(arr));
 
-console.log(average(k));
+// _________________________________________________________
+
+// function delLatter(str, latters) {
+//    let result = str;
+//    for (let latter of latters) {
+//       result = result.replaceAll(latter, '');
+//    }
+//    return result;
+// }
+// console.log(delLatter('Hello World', ['l', 'd']));
